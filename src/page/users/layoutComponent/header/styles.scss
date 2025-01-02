@@ -67,3 +67,104 @@
     }
   }
 }
+
+.header_logo {
+  padding: 16px 0;
+}
+
+.header_menu {
+  padding: 24px 0;
+
+  ul {
+    display: flex;
+    justify-content: space-between;
+
+    li {
+      list-style: none;
+      position: relative;
+      a {
+        text-decoration: none;
+        font-size: 16px;
+        color: map.get($theme-colors, "dark");
+        text-transform: uppercase;
+        font-weight: bold;
+        letter-spacing: 2px;
+        transform: all 0.3s;
+        padding: 4px 0;
+        display: block;
+      }
+    }
+
+    .active a {
+      color: map.get($theme-colors, "main");
+    }
+
+    li:hover .header_menu_dropdown {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .header_menu_dropdown {
+      background: map.get($theme-colors, "dark");
+      display: block;
+      position: absolute;
+      width: 200px;
+      z-index: 9;
+      padding: 4px 0;
+      transition: all 0.3s;
+      opacity: 0;
+      visibility: hidden;
+      border-radius: 2px;
+
+      li {
+        a {
+          text-transform: capitalize;
+          color: map.get($theme-colors, "light");
+          padding: 4px 16px;
+          font-weight: 400;
+        }
+        a:hover {
+          border-radius: 2px;
+          background: map.get($theme-colors, "main");
+        }
+      }
+    }
+  }
+}
+
+.header_cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  ul {
+    display: flex;
+    margin-right: 20px;
+    li {
+      list-style: none;
+      position: relative;
+      margin-right: 20px;
+
+      svg {
+        font-size: 20px;
+        color: map.get($theme-colors, "main");
+      }
+
+      span {
+        color: white;
+        background: map.get($theme-colors, "danger");
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        display: inline-block;
+        text-align: center;
+        line-height: 20px;
+        font-size: 12px;
+        font-weight: 500;
+        top: -10px;
+        left: 15px;
+      }
+    }
+  }
+}
