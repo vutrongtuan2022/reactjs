@@ -1,0 +1,49 @@
+.carousel {
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel-track {
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel-items {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+}
+
+.carousel-item {
+  flex: 0 0 auto;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.carousel-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.carousel-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.carousel-button.prev {
+  position: absolute;
+  left: 10px;
+  z-index: 1;
+}
+
+.carousel-button.next {
+  position: absolute;
+  right: 10px;
+  z-index: 1;
+}

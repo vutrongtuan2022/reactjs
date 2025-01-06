@@ -1,6 +1,11 @@
 import React, { memo, useState } from "react";
 import "./styles.scss";
-import { AiOutlineFacebook, AiOutlineShoppingCart } from "react-icons/ai";
+import {
+  AiOutlineFacebook,
+  AiOutlineMenu,
+  AiOutlinePhone,
+  AiOutlineShoppingCart,
+} from "react-icons/ai";
 import { SiInstagram } from "react-icons/si";
 import { FaLinkedin, FaTwitter, FaUserCircle } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
@@ -8,6 +13,7 @@ import { Link } from "react-router-dom";
 import { formater } from "ultis/formater";
 import { ROUTER } from "ultis/router";
 function Header() {
+  const [isShowCategories, setIsShowCategories] = useState(true);
   const [menus, setMenus] = useState([
     {
       name: "Trang chủ",
@@ -149,6 +155,72 @@ function Header() {
                   </Link>
                 </li>
               </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="container">
+        <div className="row hero_categories_container">
+          <div className="col-lg-3 hero_categories">
+            <div
+              className="hero_categories_all"
+              onClick={() => setIsShowCategories(!isShowCategories)}
+            >
+              <AiOutlineMenu />
+              Danh sách sản phẩm
+            </div>
+            {isShowCategories && (
+              <ul className={isShowCategories ? "" : "hidden"}>
+                <li>
+                  <Link to="#">Shop bán thịt</Link>
+                </li>
+                <li>
+                  <Link to="#">Shop bán rau củ</Link>
+                </li>
+                <li>
+                  <Link to="#">Shop bán nước trái cây</Link>
+                </li>
+                <li>
+                  <Link to="#">Shop bán trái cây</Link>
+                </li>
+                <li>
+                  <Link to="#">Shop bán hải sản</Link>
+                </li>
+              </ul>
+            )}
+          </div>
+          <div className="col-lg-9 hero_search_container">
+            <div className="hero_search">
+              <div className="hero_search_form">
+                <form action="#">
+                  <input type="text" placeholder="Bạn đang tìm gì..." />
+                  <button type="submit" className="button_search">
+                    Tìm kiếm
+                  </button>
+                </form>
+              </div>
+              <div className="hero_search_phone">
+                <div className="hero_search_phone_icon">
+                  <AiOutlinePhone />
+                </div>
+                <div className="hero_search_phone_text">
+                  <p>0528.454.545</p>
+                  <span>Hỗ trợ 24/7</span>
+                </div>
+              </div>
+            </div>
+            <div className="hero_item">
+              <div className="hero_text">
+                <span>Trái cây tươi</span>
+                <h2>
+                  Rau quả <br />
+                  sạch 100%
+                </h2>
+                <p>Miễn phí giao hàng tận nơi</p>
+                <Link to="" className="primary-btn">
+                  Mua ngay
+                </Link>
+              </div>
             </div>
           </div>
         </div>

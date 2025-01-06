@@ -5,6 +5,8 @@
   padding: 80px 0;
   .footer_info {
     margin-bottom: 32px;
+    display: flex;
+    flex-direction: column;
     .footer_info_logo {
       margin-bottom: 15px;
       display: inline-block;
@@ -42,18 +44,50 @@
   }
 
   form {
-    position: relative;
     margin-bottom: 32px;
 
-    input {
-      width: 100%;
-      font-size: 16px;
-      padding-left: 20px;
-      color: map.get($theme-colors, "dark");
-      height: 40px;
-      border: 1px solid #ededed;
-      ::placeholder {
+    .input_group {
+      display: flex;
+      align-items: center;
+
+      input {
+        width: 100%;
+        font-size: 16px;
+        padding-left: 20px;
         color: map.get($theme-colors, "dark");
+        height: 40px;
+        border: 1px solid #ededed;
+        ::placeholder {
+          color: map.get($theme-colors, "dark");
+        }
+      }
+      button {
+        padding: 0 24px;
+        height: 40px;
+        min-width: max-content;
+      }
+    }
+  }
+  .footer_widget_social {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    margin-top: 30px;
+
+    div {
+      :hover {
+        background: map.get($theme-colors, "main");
+        color: map.get($theme-colors, "light");
+        border-color: map.get($theme-colors, "light");
+      }
+      svg {
+        font-size: 20px;
+        padding: 10px;
+        color: #404040;
+        border: 1px solid #ededed;
+        border-radius: 50%;
+        background: map.get($theme-colors, "white");
+        cursor: pointer;
       }
     }
   }
